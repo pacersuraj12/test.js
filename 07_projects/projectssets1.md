@@ -66,3 +66,21 @@ results.innerHTML =`<span>${bmi}</span>`;
 
 
 ```
+
+
+## Project 3 solution code
+
+``` javascript
+
+const clock = document.getElementById('clock');
+// const clock = document.querySelector('#clock')
+
+// let date = new Date();
+// console.log(Date.toLocalTimeString());
+setInterval(function () {
+  let date = new Date();
+// console.log(date.toLocaleTimeString());
+clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+
+```
