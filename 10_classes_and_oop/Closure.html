@@ -6,7 +6,8 @@
     <title>Closure aur chai </title>
 </head>
 <body style="background-color: #313131;">
-    
+    <button id="orange">orange</button>
+    <button id="green">green</button>
 </body>
 
 <script>
@@ -20,19 +21,50 @@
 // }
 // init();
 
-function outer(){
-    let username = "suraj"
-    function inner(){
-    console.log("INNER ",username);        
+// function outer(){
+//     let username = "suraj"
+//     function inner(){
+//     console.log("INNER ",username);        
+//     }
+//     function innerTwo(){
+//         console.log("INNERTwo",username);
+//     }
+//     inner()
+//     innerTwo()
+// }
+// outer()
+// console.log("TOOuter",username);
+
+
+// function makeFunc() {
+//   const name = "Mozilla";
+//   function displayName() {
+//     console.log(name);
+//   }
+//   return displayName;
+// }
+
+// const myFunc = makeFunc();
+// myFunc();
+</script>
+<script>
+// document.getElementById("orange").onclick = function(){
+//     document.body.style.backgroundColor = `orange`
+// }
+// document.getElementById("green").onclick = function(){
+//     document.body.style.backgroundColor = `green`
+// }
+
+function clickHandler(color){
+    // document.body.style.backgroundColor = `${color}`
+    return function (){
+        document.body.style.backgroundColor=`${color}`
     }
-    function innerTwo(){
-        console.log("INNERTwo",username);
-    }
-    inner()
-    innerTwo()
 }
-outer()
-console.log("TOOuter",username);
+
+document.getElementById('orange').onclick = clickHandler("orange")
+document.getElementById('green').onclick = clickHandler("green")
+
 
 
 </script>
